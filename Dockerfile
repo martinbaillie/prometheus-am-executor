@@ -3,7 +3,7 @@ MAINTAINER Martin Baillie <martin.t.baillie@gmail.com>
 
 WORKDIR /go/src/github.com/imgix/prometheus-am-executor
 COPY ${PWD} .
-RUN apk --no-cache add git \
+RUN apk --no-cache add git bash\
 	&& go get -u github.com/prometheus/alertmanager/... \
         && go get -u github.com/prometheus/client_golang/... \
         && CGO_ENABLED=0 GOARCH=amd64 GOOS=linux \
